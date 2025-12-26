@@ -11,23 +11,28 @@
     html, body {
         margin: 0;
         padding: 0;
-        min-height: 100vh;
+        height: 100%;
+        width: 100%;
+        font-family: 'Uncial Antiqua', serif;
+        color: #2a1f14;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Uncial Antiqua', serif;
-        color: #2a1f14;
         background: transparent;
     }
 
-    /* Рамка */
+    /* Рамка растягивается под экран */
     .frame {
-        padding: 30px;
+        box-sizing: border-box;
+        width: 95vw;  /* почти вся ширина экрана */
+        max-width: 700px; /* ограничение на больших экранах */
+        height: auto;
+        padding: 20px;
         border: 3px solid #5a4a2f;
         border-radius: 15px;
-        max-width: 90%;
-        box-sizing: border-box;
-        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     /* Орнамент сверху и снизу */
@@ -43,68 +48,67 @@
     }
 
     .frame::before {
-        top: 8px;
+        top: 5px;
         left: 0;
     }
 
     .frame::after {
-        bottom: 8px;
+        bottom: 5px;
         left: 0;
     }
 
     .scroll {
-        padding: 30px 25px;
-        max-width: 600px;
-        margin: auto;
+        width: 100%;
+        padding: 20px;
     }
 
     h1 {
         font-family: 'Cinzel', serif;
         text-align: center;
-        font-size: 36px;
+        font-size: 32px;
         letter-spacing: 3px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         text-transform: uppercase;
     }
 
     .symbol {
         text-align: center;
-        font-size: 30px;
-        margin-bottom: 20px;
+        font-size: 28px;
+        margin-bottom: 15px;
         opacity: 0.75;
     }
 
     p {
         font-size: 18px;
-        line-height: 1.6;
-        margin: 15px 0;
+        line-height: 1.5;
+        margin: 12px 0;
         text-align: center;
     }
 
     .section {
-        margin-top: 30px;
+        margin-top: 25px;
     }
 
     .section-title {
         font-family: 'Cinzel', serif;
-        font-size: 22px;
+        font-size: 20px;
         letter-spacing: 2px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         text-align: center;
     }
 
     .warning {
-        font-size: 18px;
+        font-size: 17px;
         font-style: italic;
         opacity: 0.85;
     }
 
     @media (max-width: 600px) {
         h1 {
-            font-size: 28px;
+            font-size: 24px;
         }
         .section-title {
-            font-size: 20px;
+            font-size: 18px;
         }
         p, .warning {
             font-size: 16px;
