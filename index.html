@@ -11,78 +11,54 @@
     html, body {
         margin: 0;
         padding: 0;
-        height: 100%;
         width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: 'Uncial Antiqua', serif;
+        background: #fdf6e3; /* легкий фон свитка */
         color: #2a1f14;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: transparent;
-    }
-
-    /* Рамка растягивается под экран */
-    .frame {
-        box-sizing: border-box;
-        width: 95vw;  /* почти вся ширина экрана */
-        max-width: 700px; /* ограничение на больших экранах */
-        height: auto;
-        padding: 20px;
-        border: 3px solid #5a4a2f;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Орнамент сверху и снизу */
-    .frame::before,
-    .frame::after {
-        content: "❧ ✦ ❧ ✦ ❧";
-        position: absolute;
-        font-size: 24px;
-        color: rgba(90, 74, 47, 0.7);
-        letter-spacing: 5px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .frame::before {
-        top: 5px;
-        left: 0;
-    }
-
-    .frame::after {
-        bottom: 5px;
-        left: 0;
     }
 
     .scroll {
-        width: 100%;
-        padding: 20px;
+        max-width: 90%;
+        padding: 30px 40px;
+        border: 8px double #5a4a2f; /* двойная рамка для эффекта свитка */
+        border-radius: 20px;
+        background: #fff8e7; /* фон свитка */
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    /* декоративные элементы сверху и снизу */
+    .scroll::before,
+    .scroll::after {
+        content: "❧ ✦ ❧ ✦ ❧";
+        display: block;
+        font-size: 24px;
+        margin: 10px 0;
+        color: rgba(90, 74, 47, 0.7);
     }
 
     h1 {
         font-family: 'Cinzel', serif;
-        text-align: center;
-        font-size: 32px;
+        font-size: 36px;
         letter-spacing: 3px;
-        margin-bottom: 15px;
         text-transform: uppercase;
+        margin: 20px 0;
     }
 
     .symbol {
-        text-align: center;
         font-size: 28px;
-        margin-bottom: 15px;
         opacity: 0.75;
+        margin-bottom: 15px;
     }
 
     p {
         font-size: 18px;
-        line-height: 1.5;
+        line-height: 1.6;
         margin: 12px 0;
-        text-align: center;
     }
 
     .section {
@@ -91,75 +67,69 @@
 
     .section-title {
         font-family: 'Cinzel', serif;
-        font-size: 20px;
+        font-size: 22px;
         letter-spacing: 2px;
-        margin-bottom: 8px;
-        text-align: center;
+        margin-bottom: 10px;
     }
 
     .warning {
-        font-size: 17px;
+        font-size: 18px;
         font-style: italic;
         opacity: 0.85;
+        margin-top: 15px;
     }
 
+    /* Мобильная адаптация */
     @media (max-width: 600px) {
-        h1 {
-            font-size: 24px;
-        }
-        .section-title {
-            font-size: 18px;
-        }
-        p, .warning {
-            font-size: 16px;
-        }
+        h1 { font-size: 28px; }
+        .section-title { font-size: 20px; }
+        p, .warning { font-size: 16px; }
+        .symbol { font-size: 24px; }
+        .scroll { padding: 20px; }
     }
 </style>
 </head>
 <body>
 
-<div class="frame">
-    <div class="scroll">
-        <div class="symbol">✦ ❧ ✦</div>
+<div class="scroll">
+    <div class="symbol">✦ ❧ ✦</div>
 
-        <h1>Карты желаний</h1>
+    <h1>Карты желаний</h1>
 
+    <p>
+        Сей свиток закрепляет право<br>
+        его владельца формировать желания,<br>
+        кои могут быть исполнены<br>
+        вне пределов времени.
+    </p>
+
+    <div class="section">
+        <div class="section-title">Правила</div>
         <p>
-            Сей свиток закрепляет право<br>
-            его владельца формировать желания,<br>
-            кои могут быть исполнены<br>
-            вне пределов времени.
+            I. Одна карта — одно желание.<br>
+            II. Желание должно исходить от сердца.<br>
+            III. Не дозволяется желать без веры.<br>
+            IV. Карты не теряют силы со временем.<br>
+            V. Объяснения не требуются.
         </p>
+    </div>
 
-        <div class="section">
-            <div class="section-title">Правила</div>
-            <p>
-                I. Одна карта — одно желание.<br>
-                II. Желание должно исходить от сердца.<br>
-                III. Не дозволяется желать без веры.<br>
-                IV. Карты не теряют силы со временем.<br>
-                V. Объяснения не требуются.
-            </p>
-        </div>
+    <div class="section">
+        <div class="section-title">Использование</div>
+        <p>
+            Карта заполняется в миг готовности.<br>
+            Заполненная карта передаётся дарителю.<br>
+            С сего момента желание считается принятым.
+        </p>
+    </div>
 
-        <div class="section">
-            <div class="section-title">Использование</div>
-            <p>
-                Карта заполняется в миг готовности.<br>
-                Заполненная карта передаётся дарителю.<br>
-                С сего момента желание считается принятым.
-            </p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Примечание</div>
-            <p class="warning">
-                Будьте осторожны со своими желаниями.<br>
-                Ибо всякое истинное желание<br>
-                меняет того, кто его произнёс.
-            </p>
-        </div>
-
+    <div class="section">
+        <div class="section-title">Примечание</div>
+        <p class="warning">
+            Будьте осторожны со своими желаниями.<br>
+            Ибо всякое истинное желание<br>
+            меняет того, кто его произнёс.
+        </p>
     </div>
 </div>
 
